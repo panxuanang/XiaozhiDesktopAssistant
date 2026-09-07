@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xiaozhi-desktop-assistant"
+version = "0.1.0"
+description = "Windows desktop execution client for Xiaozhi MCP with pluggable AI APIs"
+requires-python = ">=3.11,<3.14"
+authors = [{name = "Your Company"}]
+readme = "README.md"
+license = {text = "Proprietary application source; see THIRD_PARTY_NOTICES.md for third-party licenses"}
+
+[project.scripts]
+xiaozhi-desktop-assistant = "xiaozhi_assistant.main:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
